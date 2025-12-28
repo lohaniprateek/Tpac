@@ -1,0 +1,17 @@
+{
+  "custom/quicklink1": {
+    "format": "󰾔 ",
+    "on-click": "qutebrowser",
+    "tooltip-format": "Browser"
+  },
+  "custom/quicklink2": {
+    "format": "󰉋 ",
+    "on-click": "thunar",
+    "tooltip-format": "Filemanager"
+  },
+  "custom/quicklink3": {
+    "format": "󰇮 ",
+    "on-click": "qutebrowser 'https://mail.google.com/mail/u/0/#inbox'",
+    "tooltip-format": "Thunderbird"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "custom/daemons": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/daemons-status.sh",
+    "interval": 5,
+    "tooltip": true,
+    "on-click": "ghostty --class=nebu.system -e systemctl --user status"
+  },
+  "group/daemons": {
+    "orientation": "horizontal",
+    "modules": ["custom/daemons"]
+  }
+}
