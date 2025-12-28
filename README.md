@@ -1,10 +1,13 @@
-# lohaniprateek's dotfiles
+# T-pac is the set of installation scripts and Config files that combine to create a minimal yet powerful Dev tool that Arch Linux should be 
 
-my dotfiles includes:
-
-- Arch Linux setup
-- amateur install scripts
-- all configurations file are at root at this time but, i'll keep modifying as i go.
+Prerequisites: an Arch ISO installed.
+> [!NOTE]  
+> Our system configs are based on Hyprland and other handpicked tools you can see listed below. 
+> You are not forced to use those tools only; you can find their alternatives.
+> But ! MUST KNOW HOW THINGS WORK FIRST.
+```
+\\ curl auto installation link will be added here so one can install it with one command or from your tty.
+```
 
 ## content
 
