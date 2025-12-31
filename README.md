@@ -52,3 +52,4 @@ Prerequisites: an Arch ISO installed.
 - **firewall**               ->  `iptables` w/ `ufw`
 - **sntp**                   ->  `openntpd`
 - **firmware updater**       ->  `fwupdmgr` (`fwupd`)
+- **ram Optimiser**          ->  `zram`
