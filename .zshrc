@@ -114,6 +114,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias doc='docker'
+alias tf='terraform'
 # bun completions
 [ -s "/home/prateek/.bun/_bun" ] && source "/home/prateek/.bun/_bun"
 

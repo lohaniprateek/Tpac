@@ -13,3 +13,4 @@ killall -q waybar
 
 # Launch bar1 and bar2
 waybar
+

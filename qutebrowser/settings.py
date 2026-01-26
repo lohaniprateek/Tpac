@@ -15,7 +15,7 @@ config.set("statusbar.show", "in-mode") # Show status bar only in command/insert
 # Set DuckDuckGo as the default and start page.
 config.set("url.default_page", "https://duckduckgo.com")
 config.set("url.start_pages", ["https://duckduckgo.com"])
-config.set("url.searchengines", {"DEFAULT": "https://duckduckgo.com/?q={}"})
+#config.set("url.searchengines", {"DEFAULT": "https://duckduckgo.com/?q={}"})
 
 
 # Enable smooth scrolling.
