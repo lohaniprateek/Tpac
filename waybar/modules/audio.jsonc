@@ -1,4 +1,11 @@
 {
+  "group/sound": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#mic"
+    ]
+  },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{volume}% {icon} ",
@@ -11,7 +18,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [" ", " ", " "]
+      "default": [
+        " ",
+        " ",
+        " "
+      ]
     },
     "scroll-step": 5,
     "on-click": "ghostty --class=nebu.mix -e pulsemixer"
@@ -23,9 +34,5 @@
     "on-scroll-up": "amixer set Capture 5%+",
     "on-scroll-down": "amixer set Capture 5%-",
     "on-click": "ghostty --class=nebu.mix -e pulsemixer"
-  },
-  "group/sound": {
-    "orientation": "horizontal",
-    "modules": ["pulseaudio", "pulseaudio#mic"]
   }
 }

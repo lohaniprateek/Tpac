@@ -48,10 +48,6 @@ tooltip {
     border-radius: 5px;
 }
 
-#custom-power_profile,
-#custom-weather,
-#custom-moon,
-#custom-wallpaper,
 #window,
 #clock,
 #battery,
@@ -66,28 +62,15 @@ tooltip {
     background: #1e1e2e;
     opacity: 0.8;
     padding: 0px 10px;
-    /* margin: 3px 0px; */
-    margin: 0px 0px;
+    margin: 3px 0px;
     margin-top: 10px;
     border: 1px solid #181825;
 }
 
-#custom-memory {
-    color: #eba0ac;
-}
-
-#custom-temperature {
-    border-radius: 10px 0px 0px 10px;
-}
 
 #custom-temperature.critical {
     color: #f00;
 }
-
-#backlight {
-    border-radius: 10px 0px 0px 10px;
-}
-
 #tray {
     border-radius: 10px;
     margin-right: 10px;
@@ -115,9 +98,7 @@ tooltip {
 
 #clock {
     color: #fab387;
-    border-radius: 10px 0px 0px 10px;
-    margin-left: 10px;
-    border-right: 0px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 #network {
@@ -129,7 +110,7 @@ tooltip {
 
 #bluetooth {
     color: #89b4fa;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 10px 10px 10px 0px;
     margin-right: 10px
 } 
 
@@ -149,9 +130,7 @@ tooltip {
 
 #battery {
     color: #a6e3a1;
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
-    border-left: 0px;
+    border-radius: 10px 0px 0px 10px;
 }
 #battery.warning {
     color: #FFA500;
@@ -159,8 +138,3 @@ tooltip {
 #battery.critical {
     color: #F00;
 } 
-#custom-moon {
-    border-radius: 0px 10px 10px 0px;
-    border-right: 0px;
-    margin-left: 0px;
-}

@@ -1,0 +1,27 @@
+{
+  "include": [
+    "./modules/battery.jsonc",
+    "./modules/clock.jsonc",
+    "./modules/workspaces.jsonc",
+    "./modules/tray.jsonc"
+  ],
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 10,
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "bluetooth",
+    "battery"
+  ]
+}
