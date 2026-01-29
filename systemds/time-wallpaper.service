@@ -1,0 +1,7 @@
+[Unit]
+Description=Change Wallpaper based on time
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/Tpac/hypr/scripts/time-wallpaper.sh
