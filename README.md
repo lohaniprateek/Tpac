@@ -11,8 +11,8 @@ Prerequisites: an Arch ISO installed.
 
 ## content
 
-- [programs i use] (#programs-i-use)
-- [install] (#install)
+- [programs i use](#programs-i-use)
+- [install](#install)
 
 ## programs i use
 
