@@ -36,15 +36,14 @@ Prerequisites: an Arch ISO installed.
 - **simple recorder**        ->  `ffmpeg` w/ `dmenu-record` script
 - **text editor**            ->  `neovim`
 - **calculator**             ->  `qalc` (`libqalculate`)
-- **browser**                ->  `firefox` (using [`ffsetup`](https://codeberg.org/pinitik1906/ffsetup))
-- **mail client**            ->  `neomutt` (using [`mutt-wizard`](https://github.com/LukeSmithxyz/mutt-wizard))
+- **browser**                ->  `qutebrowser` (https://github.com/qutebrowser/qutebrowser)
 - **bittorrent client**      ->  `transmission-cli` w/ `tremc`
 - **file manager**           ->  `yazi`
-- **image viewer**           ->  `image viewer`
+- **image viewer**           ->  `feh`
 - **video player**           ->  `mpv`
 - **music player**           ->  `mpd` w/ `mpc` and `ncmpcpp`
 - **volume control**         ->  `ncpamixer`
-- **rss feeder**             ->  `newsraft`
+- **rss feeder**             ->  `newsboat`
 - **pdf viewer**             ->  `zathura`
 - **sound server**           ->  `pipewire`
 - **bluetooth manager**      ->  `blueman`
