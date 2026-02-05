@@ -28,9 +28,12 @@ ln -s $HOME/Tpac/.tmux.conf $HOME/.tmux.conf
 ln -s $HOME/Tpac/.newsboat $HOME/.newsboat
 ln -s $HOME/Tpac/systemds/time-wallpaper.service $HOME/.config/systemd/user/time-wallpaper.service
 ln -s $HOME/Tpac/systemds/time-wallpaper.timer $HOME/.config/systemd/user/time-wallpaper.timer
+<<<<<<< HEAD
+=======
 
 # sf bin files to .local/bin
 for file in $HOME/Tpac/bin/*.sh; do
   [ -e "$file" ] || continue
   ln -sf "$file" "$HOME/.local/bin/$(basename "$file")"
 done
+>>>>>>> main

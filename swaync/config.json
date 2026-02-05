@@ -28,17 +28,42 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
+<<<<<<< HEAD
+    "buttons-grid",
+    "mpris",
+    "dnd",
+    "title",
+    "notifications"
+=======
     "mpris",
     "title",
     "volume",
     "notifications",
     "backlight",
     "buttons-grid"
+>>>>>>> main
   ],
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
+<<<<<<< HEAD
+      "button-text": "󰎟"
+    },
+    "backlight": {
+      "label": "󰃟"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": "Notification"
+    },
+    "mpris": {
+      "image-size": 50,
+      "image-radius": 12
+=======
       "button-text": "Clear"
     },
     "mpris": {
@@ -52,10 +77,31 @@
     "backlight": {
       "label": "󰃞",
       "step": 5
+>>>>>>> main
     },
     "buttons-grid": {
       "actions": [
         {
+<<<<<<< HEAD
+          "label": "󰐥",
+          "command": "bash -c $HOME/.config/hypr/scripts/Wlogout.sh"
+        },
+        {
+          "label": "󰌾",
+          "command": "bash -c $HOME/.config/hypr/scripts/hyprlock.sh"
+        },
+        {
+          "label": "󰍃",
+          "command": "hyprctl dispatch exit"
+        },
+        {
+          "label": "󰀝",
+          "command": "bash -c $HOME/.config/hypr/scripts/AirplaneMode.sh"
+        },
+        {
+          "label": "󰝟",
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+=======
           "label": "",
           "command": "ghostty nmtui",
           "tooltip": "Network"
@@ -100,6 +146,7 @@
           "label": "⏻",
           "command": "shutdown now",
           "tooltip": "Power Off"
+>>>>>>> main
         }
       ]
     }
