@@ -5,40 +5,49 @@
   "layer": "overlay",
   "control-center-layer": "top",
   "layer-shell": true,
-  "cssPriority": "user",
-  "control-center-margin-top": 5,
+  "cssPriority": "application",
+  "control-center-width": 310,
+  "control-center-margin-top": 0,
   "control-center-margin-bottom": 0,
   "control-center-margin-right": 0,
   "control-center-margin-left": 0,
   "notification-2fa-action": true,
   "notification-inline-replies": false,
-  "notification-icon-size": 24,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 100,
-  "notification-window-width": 380,
-  "timeout": 6,
-  "timeout-low": 3,
+  "notification-window-width": 390,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 240,
+  "notification-body-image-width": 240,
+  "timeout": 8,
+  "timeout-low": 4,
   "timeout-critical": 0,
-  "fit-to-screen": false,
-  "control-center-width": 380,
-  "control-center-height": 800,
+  "fit-to-screen": true,
   "keyboard-shortcuts": true,
-  "image-visibility": "when available",
-  "transition-time": 200,
-  "hide-on-clear": false,
+  "image-visibility": "when-available",
+  "transition-time": 150,
+  "hide-on-clear": true,
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
+<<<<<<< HEAD
     "buttons-grid",
     "mpris",
     "dnd",
     "title",
     "notifications"
+=======
+    "mpris",
+    "title",
+    "volume",
+    "notifications",
+    "backlight",
+    "buttons-grid"
+>>>>>>> main
   ],
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
+<<<<<<< HEAD
       "button-text": "󰎟"
     },
     "backlight": {
@@ -54,10 +63,26 @@
     "mpris": {
       "image-size": 50,
       "image-radius": 12
+=======
+      "button-text": "Clear"
+    },
+    "mpris": {
+      "image-size": 80,
+      "image-radius": 10
+    },
+    "volume": {
+      "label": "",
+      "step": 5
+    },
+    "backlight": {
+      "label": "󰃞",
+      "step": 5
+>>>>>>> main
     },
     "buttons-grid": {
       "actions": [
         {
+<<<<<<< HEAD
           "label": "󰐥",
           "command": "bash -c $HOME/.config/hypr/scripts/Wlogout.sh"
         },
@@ -76,6 +101,52 @@
         {
           "label": "󰝟",
           "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+=======
+          "label": "",
+          "command": "ghostty nmtui",
+          "tooltip": "Network"
+        },
+        {
+          "label": "",
+          "command": "blueman-manager",
+          "tooltip": "Bluetooth"
+        },
+        {
+          "label": "󰂛",
+          "command": "swaync-client -d",
+          "type": "toggle",
+          "tooltip": "DND"
+        },
+        {
+          "label": "󰍜",
+          "command": "gnome-network-displays",
+          "tooltip": "Screens"
+        },
+        {
+          "label": "󰈙",
+          "command": "ghostty bash -i -c 'Docs'",
+          "tooltip": "Files"
+        },
+        {
+          "label": "",
+          "command": "ghostty bash -i -c 'Settings'",
+          "tooltip": "Settings"
+        },
+        {
+          "label": "",
+          "command": "hyprlock",
+          "tooltip": "Lock"
+        },
+        {
+          "label": "󰜉",
+          "command": "reboot",
+          "tooltip": "Reboot"
+        },
+        {
+          "label": "⏻",
+          "command": "shutdown now",
+          "tooltip": "Power Off"
+>>>>>>> main
         }
       ]
     }
