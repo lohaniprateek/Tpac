@@ -1,6 +1,6 @@
 # T-pac is the set of installation scripts and Config files that combine to create a minimal yet powerful Dev tool that Arch Linux should be
 
-Prerequisites: an Arch ISO installed.
+**Prerequisites**: an Arch ISO installed.
 > [!NOTE]  
 > Our system configs are based on Hyprland and other handpicked tools you can see listed below.
 > You are not forced to use those tools only; you can find their alternatives.
@@ -37,7 +37,7 @@ Prerequisites: an Arch ISO installed.
 - **simple recorder**        ->  `ffmpeg` w/ `dmenu-record` script
 - **text editor**            ->  `neovim`
 - **calculator**             ->  `qalc` (`libqalculate`)
-- **browser**                ->  [`Qutebrowser`](https://github.com/lohaniprateek/Tpac/qutebrowser)
+- **browser**                ->  [ `Qutebrowser` ](https://github.com/lohaniprateek/Tpac/qutebrowser)
 - **bittorrent client**      ->  `transmission-cli` w/ `tremc`
 - **file manager**           ->  `yazi`
 - **image viewer**           ->  `feh`
