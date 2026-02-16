@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: "JetBrains Mono";
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     min-height: 5px;
 }
 
@@ -58,7 +58,9 @@ tooltip {
 #custom-memory,
 #workspaces,
 #tray,
-#backlight {
+#backlight,
+#cpu,
+#wireplumber {
     background: #1e1e2e;
     opacity: 0.8;
     padding: 0px 10px;
@@ -114,17 +116,12 @@ tooltip {
     margin-right: 10px
 } 
 
-#pulseaudio {
-    color: #89b4fa;
-    border-left: 0px;
-    border-right: 0px;
-}
 
-#pulseaudio.microphone {
+#wireplumber {
     color: #cba6f7;
     border-left: 0px;
     border-right: 0px;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 10px 10px 10px 10px;
     margin-right: 10px;
 }
 
@@ -138,3 +135,7 @@ tooltip {
 #battery.critical {
     color: #F00;
 } 
+#cpu {
+  border-radius: 10px;
+  margin-left: 10px;
+}
