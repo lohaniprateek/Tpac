@@ -19,6 +19,7 @@ ZSH_THEME="robbyrussell"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+#Navigation keybing for zsh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -77,6 +78,7 @@ plugins=(   git
             archlinux
             zsh-autosuggestions
             zsh-syntax-highlighting
+            vi-mode
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,7 +117,8 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias doc='docker'
 alias tf='terraform'
-alias  vim='nvim'
+alias clr='clear'
+alias  v='nvim'
 # bun completions
 [ -s "/home/prateek/.bun/_bun" ] && source "/home/prateek/.bun/_bun"
 
@@ -123,5 +126,6 @@ alias  vim='nvim'
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-
 export TERM=xterm-256color
+
+source <(fzf --zsh)
