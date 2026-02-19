@@ -1,5 +1,11 @@
 local map = vim.keymap.set
+
 local opts = { noremap = true, silent = true }
 
-map({ "i", "v", "t" }, "jj", "<Esc>", opts)
-map("c", "jj", "<C-c>", opts)
+-- Exit insert mode with jj
+map({"i","v","c"}, "jj", "<Esc>", opts)
+
+-- (Optional) Exit terminal mode with jj
+map("t", "jj", [[<C-\><C-n>]], opts)
+
+map("n","<leader>x", ".lua.<CR>")

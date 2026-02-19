@@ -26,7 +26,7 @@ ffmpegthumbnailer
 fim
 fuse2
 fzf
-ghostty
+alacritty
 git
 go
 greetd

@@ -19,7 +19,7 @@
 
 **tiling window manager**  ->  [`hyprland`](https://github.com/lohaniprateek/Congi-files/hypr)
 
-- **terminal**               ->  [`ghostty`](https://github.com/lohaniprateek/Congi-files/ghostty/)
+- **terminal**               ->  [`alacritty`](https://github.com/lohaniprateek/Congi-files/alacritty/)
 - **application launcher**   ->  [`rofi`](https://github.com/lohaniprateek/Congi-files/rofi)
 - **lockscreen**             ->  [`hyprlock`](https://github.com/lohaniprateek/Congi-files/hypr/hyprlock.conf)
 - **wallpaper setter**       ->  `hsetroot` w/ `setbg` script

@@ -10,17 +10,17 @@
   },
   "cpu": {
     "format": " {usage}%",
-    "on-click": "ghostty --class=nebu.system -e btop"
+    "on-click": "alacritty --class=nebu.system -e btop"
   },
   "memory": {
     "format": " {}%",
-    "on-click": "ghostty --class=nebu.system -e btop"
+    "on-click": "alacritty --class=nebu.system -e btop"
   },
   "disk": {
     "interval": 30,
     "format": " {percentage_used}%",
     "path": "/",
-    "on-click": "ghostty --class=nebu.system -e btop"
+    "on-click": "alacritty --class=nebu.system -e btop"
   },
   "temperature": {
     "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",

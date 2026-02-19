@@ -47,7 +47,7 @@
     "tooltip-format": "{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
     "tooltip-format-disconnected": "MPD (disconnected)",
     "on-click-right": "playerctl play-pause",
-    "on-click": "ghostty --class=nebu.music -e rmpc"
+    "on-click": "alacritty --class=nebu.music -e rmpc"
   },
   "group/daemons": {
     "orientation": "horizontal",
@@ -61,7 +61,7 @@
     "exec": "~/.config/waybar/scripts/daemons-status.sh",
     "interval": 5,
     "tooltip": true,
-    "on-click": "ghostty --class=nebu.system -e systemctl --user status"
+    "on-click": "alacritty --class=nebu.system -e systemctl --user status"
   },
   "tray": {
     "icon-size": 16,
