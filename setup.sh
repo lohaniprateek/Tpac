@@ -1,40 +1,52 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-sudo "rm $HOME/.config/nvim"
-sudo "rm $HOME/.config/waybar"
-sudo "rm $HOME/.config/hypr"
-sudo "rm $HOME/.config/qutebrowser"
-sudo "rm $HOME/.zshrc"
-sudo "rm $HOME/.config/alacritty"
-#sudo "rm $HOME/.config/sddm"
-sudo "rm $HOME/.config/swaync"
-#sudo "rm /etc/sddm.conf"
-#sudo "rm -rf /usr/share/sddm"
-sudo "rm $HOME/.tmux.conf"
-sudo "rm $HOME/.newsboat"
-sudo "rm $HOME/.config/yazi"
-rm "$HOME/.config/systemd/user/time-wallpaper.service"
-rm "$HOME/.config/systemd/user/time-wallpaper.timer"
-rm "$HOME/.config/mimeapps.list"
+set -euo pipefail
 
-ln -s "$HOME/Tpac/nvim" "$HOME/.config/nvim"
-ln -s "$HOME/Tpac/waybar" "$HOME/.config/waybar"
-ln -s "$HOME/Tpac/hypr" "$HOME/.config/hypr"
-ln -s "$HOME/Tpac/qutebrowser" "$HOME/.config/qutebrowser"
-ln -s "$HOME/Tpac/.zshrc" "$HOME/.zshrc"
-ln -s "$HOME/Tpac/alacritty/" "$HOME/.config/alacritty"
-ln -s "$HOME/Tpac/swaync/" "$HOME/.config/swaync"
-#sudo "ln -s $HOME/Tpac/sddm/sddm.conf" "/etc/sddm.conf"
-#sudo "ln -s $HOME/Tpac/sddm" "/usr/share/sddm"
-ln -s "$HOME/Tpac/.tmux.conf" "$HOME/.tmux.conf"
-ln -s "$HOME/Tpac/.newsboat" "$HOME/.newsboat"
-ln -s "$HOME/Tpac/systemds/time-wallpaper.service" "$HOME/.config/systemd/user/time-wallpaper.service"
-ln -s "$HOME/Tpac/systemds/time-wallpaper.timer" "$HOME/.config/systemd/user/time-wallpaper.timer"
-ln -s "$HOME/Tpac/yazi" "$HOME/.config/yazi"
-ln -s "$HOME/Tpac/mimeapps.list" "$HOME/.config/mimeapps.list"
+REPO_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_DIR="$HOME/.config"
+USER_SYSTEMD_DIR="$CONFIG_DIR/systemd/user"
+LOCAL_BIN_DIR="$HOME/.local/bin"
 
-# sf bin files to .local/bin
-for file in $HOME/Tpac/bin/*.sh; do
-  [ -e "$file" ] || continue
-  ln -sf "$file" "$HOME/.local/bin/$(basename "$file")"
+mkdir -p "$CONFIG_DIR" "$USER_SYSTEMD_DIR" "$LOCAL_BIN_DIR"
+
+link_item() {
+  local src="$1"
+  local dst="$2"
+
+  if [[ ! -e "$src" && ! -L "$src" ]]; then
+    echo "[skip] missing source: $src"
+    return 0
+  fi
+
+  rm -rf "$dst"
+  ln -s "$src" "$dst"
+  echo "[link] $dst -> $src"
+}
+
+link_item "$REPO_DIR/nvim" "$CONFIG_DIR/nvim"
+link_item "$REPO_DIR/qutebrowser" "$CONFIG_DIR/qutebrowser"
+link_item "$REPO_DIR/dunst" "$CONFIG_DIR/dunst"
+link_item "$REPO_DIR/yazi" "$CONFIG_DIR/yazi"
+link_item "$REPO_DIR/zathura" "$CONFIG_DIR/zathura"
+link_item "$REPO_DIR/.zshrc" "$HOME/.zshrc"
+link_item "$REPO_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
+link_item "$REPO_DIR/mimeapps.list" "$CONFIG_DIR/mimeapps.list"
+link_item "$REPO_DIR/systemds/time-wallpaper.service" "$USER_SYSTEMD_DIR/time-wallpaper.service"
+link_item "$REPO_DIR/systemds/time-wallpaper.timer" "$USER_SYSTEMD_DIR/time-wallpaper.timer"
+
+# Newsboat: only link URLs feed list if present.
+if [[ -f "$REPO_DIR/.newsboat/urls" ]]; then
+  mkdir -p "$HOME/.newsboat"
+  link_item "$REPO_DIR/.newsboat/urls" "$HOME/.newsboat/urls"
+fi
+
+# Symlink helper scripts to ~/.local/bin
+for file in "$REPO_DIR"/bin/*.sh; do
+  [[ -e "$file" ]] || continue
+  link_item "$file" "$LOCAL_BIN_DIR/$(basename "$file")"
 done
+
+echo
+echo "Done. If you use the wallpaper timer, run:"
+echo "  systemctl --user daemon-reload"
+echo "  systemctl --user enable --now time-wallpaper.timer"

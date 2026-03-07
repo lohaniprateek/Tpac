@@ -21,8 +21,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-require("config.options")
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -31,9 +29,7 @@ require("lazy").setup({
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "gruvbox-material" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
-
-require("config.keymaps")

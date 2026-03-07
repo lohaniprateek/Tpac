@@ -119,7 +119,7 @@ alias doc='docker'
 alias tf='terraform'
 alias clr='clear'
 alias v='nvim'
-alias ze='zellij'
+alias za='zathura'
 # bun completions
 [ -s "/home/prateek/.bun/_bun" ] && source "/home/prateek/.bun/_bun"
 

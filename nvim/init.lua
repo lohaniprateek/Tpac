@@ -1,1 +1,6 @@
 require("config.lazy")
+require("config.keymaps")
+require("config.options")
+require("config.autocmds")
+require("config.terminal")
+require("config.commands")

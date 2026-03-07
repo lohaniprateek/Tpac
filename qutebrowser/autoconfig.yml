@@ -13,10 +13,20 @@ settings:
       w: session-save
       wq: quit --save
       wqa: quit --save
+  colors.webpage.bg:
+    global: black
   content.javascript.clipboard:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
+  content.media.audio_capture:
+    https://meet.google.com: true
+  content.media.audio_video_capture:
+    https://meet.google.com: true
+  content.media.video_capture:
+    https://meet.google.com/mkg-dcht-ahx: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
   downloads.location.directory:
+    global: null
+  qt.force_platformtheme:
     global: null
