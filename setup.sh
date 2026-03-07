@@ -6,8 +6,9 @@ REPO_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="$HOME/.config"
 USER_SYSTEMD_DIR="$CONFIG_DIR/systemd/user"
 LOCAL_BIN_DIR="$HOME/.local/bin"
+SUCKLESS_DIR="$HOME/suckless"
 
-mkdir -p "$CONFIG_DIR" "$USER_SYSTEMD_DIR" "$LOCAL_BIN_DIR"
+mkdir -p "$CONFIG_DIR" "$USER_SYSTEMD_DIR" "$LOCAL_BIN_DIR" "$SUCKLESS_DIR"
 
 link_item() {
   local src="$1"
@@ -22,6 +23,36 @@ link_item() {
   ln -s "$src" "$dst"
   echo "[link] $dst -> $src"
 }
+
+clone_or_update_repo() {
+  local name="$1"
+  local url="$2"
+  local dst="$SUCKLESS_DIR/$name"
+  local default_branch
+
+  if [[ -e "$dst" && ! -d "$dst/.git" ]]; then
+    echo "[skip] $dst exists and is not a git repo"
+    return 0
+  fi
+
+  if [[ ! -d "$dst/.git" ]]; then
+    echo "[clone] $url -> $dst"
+    git clone "$url" "$dst"
+    return 0
+  fi
+
+  echo "[update] $dst"
+  default_branch="$(git -C "$dst" symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null || true)"
+  default_branch="${default_branch#origin/}"
+  if [[ -z "$default_branch" ]]; then
+    default_branch="$(git -C "$dst" rev-parse --abbrev-ref HEAD)"
+  fi
+  git -C "$dst" pull --ff-only origin "$default_branch"
+}
+
+clone_or_update_repo "dwm" "https://github.com/lohaniprateek/dwm.git"
+clone_or_update_repo "st" "https://github.com/lohaniprateek/st.git"
+clone_or_update_repo "dmenu" "https://github.com/lohaniprateek/dmenu.git"
 
 link_item "$REPO_DIR/nvim" "$CONFIG_DIR/nvim"
 link_item "$REPO_DIR/qutebrowser" "$CONFIG_DIR/qutebrowser"

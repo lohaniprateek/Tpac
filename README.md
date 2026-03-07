@@ -42,19 +42,18 @@ sudo pacman -S --needed - < packages.txt
 yay -S --needed - < aur-packages.txt
 ```
 
-2. Build/install suckless tools:
+2. Clone/update and link configs:
 
 ```bash
-cd dwm && sudo make clean install
-cd ../st && sudo make clean install
-cd ../dmenu && sudo make clean install
+./setup.sh
 ```
 
-3. Link configs:
+3. Build/install suckless tools from `~/suckless`:
 
 ```bash
-cd ..
-./setup.sh
+cd ~/suckless/dwm && sudo make clean install
+cd ~/suckless/st && sudo make clean install
+cd ~/suckless/dmenu && sudo make clean install
 ```
 
 4. Start DWM (`~/.xinitrc`):
