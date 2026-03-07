@@ -1,56 +1,82 @@
-# T-pac is the set of installation scripts and Config files that combine to create a minimal yet powerful Dev tool that Arch Linux should be
+# Tpac
 
-**Prerequisites**: an Arch ISO installed.
-> [!NOTE]  
-> Our system configs are based on Hyprland and other handpicked tools you can see listed below.
-> You are not forced to use those tools only; you can find their alternatives.
-> But ! MUST KNOW HOW THINGS WORK FIRST.
+Personal Arch Linux setup built around **dwm** (X11), with custom configs for terminal, editor, browser, notifications, and CLI workflow.
 
+This repo is now a DWM-first setup, not Hyprland.
+
+## Current stack
+
+- Window manager: `dwm` (custom `config.h`, gaps + systray/status patches)
+- Terminal: `st`
+- Launcher: `dmenu`
+- Notifications: `dunst`
+- Editor: `neovim` (lazy.nvim setup in `nvim/`)
+- Browser: `qutebrowser`
+- Shell: `zsh`
+- Multiplexer: `tmux`
+- File manager: `yazi`
+- PDF reader: `zathura`
+- Wallpaper: `feh` (`scripts/fehbg.sh`)
+
+## Repository layout
+
+- `dwm/` - patched source + config
+- `st/` - terminal source + config
+- `dmenu/` - launcher source + config
+- `dunst/` - `dunstrc`
+- `nvim/` - full Neovim config
+- `qutebrowser/` - browser config/theme/settings
+- `tmux/` - tmux theme/statusline snippets
+- `yazi/` - yazi config
+- `zathura/` - zathura config
+- `scripts/` - helper scripts
+- `pacman/` - package lists
+
+## Install
+
+1. Install packages:
+
+```bash
+cd pacman
+sudo pacman -S --needed - < packages.txt
+yay -S --needed - < aur-packages.txt
 ```
-\\ curl auto installation link will be added here so one can install it with one command or from your tty.
+
+2. Clone/update and link configs:
+
+```bash
+./setup.sh
 ```
 
-## content
+3. Build/install suckless tools from `~/suckless`:
 
-- [programs i use](#programs-i-use)
-- [install](#install)
+```bash
+cd ~/suckless/dwm && sudo make clean install
+cd ~/suckless/st && sudo make clean install
+cd ~/suckless/dmenu && sudo make clean install
+```
 
-## programs i use
+4. Start DWM (`~/.xinitrc`):
 
-**tiling window manager**  ->  [`hyprland`](https://github.com/lohaniprateek/Congi-files/hypr)
+```bash
+exec dwm
+```
 
-- **terminal**               ->  [`ghostty`](https://github.com/lohaniprateek/Congi-files/ghostty/)
-- **application launcher**   ->  [`rofi`](https://github.com/lohaniprateek/Congi-files/rofi)
-- **lockscreen**             ->  [`hyprlock`](https://github.com/lohaniprateek/Congi-files/hypr/hyprlock.conf)
-- **wallpaper setter**       ->  `hsetroot` w/ `setbg` script
-- **statusbar**              ->  [`waybar`](https://github.com/lohaniprateek/Tpac/waybar)
-- **interactive shell**      ->  `zsh` [interactive shell] and `dash` [non-interactive shell]
-- **user privilege**         ->  `sudo`
-- **cronjobs**               ->  `cronie`
-- **color manager**          ->  `colord` w/ `argyllcms` and `displaycal`
-- **printer**                ->  `cups` w/ `system-config-printer`
-- **scanner**                ->  `sane` w/ `simple-scan`
-- **password manager**       ->  `pass`
-- **notification daemon**    ->  `dunst`
-- **system information**     ->  `fastfetch`
-- **resource monitor**       ->  `btop`
-- **simple recorder**        ->  `ffmpeg` w/ `dmenu-record` script
-- **text editor**            ->  `neovim`
-- **calculator**             ->  `qalc` (`libqalculate`)
-- **browser**                ->  [ `Qutebrowser` ](https://github.com/lohaniprateek/Tpac/qutebrowser)
-- **bittorrent client**      ->  `transmission-cli` w/ `tremc`
-- **file manager**           ->  `yazi`
-- **image viewer**           ->  `feh`
-- **video player**           ->  `mpv`
-- **music player**           ->  `mpd` w/ `mpc` and `ncmpcpp`
-- **volume control**         ->  `ncpamixer`
-- **rss feeder**             ->  `newsboat`
-- **pdf viewer**             ->  `zathura`
-- **sound server**           ->  `pipewire`
-- **bluetooth manager**      ->  `blueman`
-- **network manager**        ->  `networkmanager`
-- **firewall**               ->  `iptables` w/ `ufw`
-- **sntp**                   ->  `openntpd`
-- **firmware updater**       ->  `fwupdmgr` (`fwupd`)
-- **ram Optimiser**          ->  `zram`
-- login manager          ->  `greetd` w/ `tuigreet`
+## DWM keybinds (from current config)
+
+- `Alt + Enter` -> open `st`
+- `Shift + Space` -> open `dmenu_run`
+- `Alt + j/k` -> focus next/prev window
+- `Alt + h/l` -> resize master area
+- `Alt + t` -> tile layout
+- `Alt + f` -> floating layout
+- `Alt + m` -> monocle layout
+- `Alt + q` -> kill focused client
+- `Alt + Shift + q` -> quit dwm
+- `Alt + 1..6` -> view tags
+- `XF86` media keys -> volume + brightness controls
+
+## Notes
+
+- This is a personal setup and is expected to evolve frequently.
+- Some older scripts may still reflect earlier Wayland/Hyprland experiments.

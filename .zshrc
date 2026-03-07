@@ -118,7 +118,8 @@ alias lt='ls --tree'
 alias doc='docker'
 alias tf='terraform'
 alias clr='clear'
-alias  v='nvim'
+alias v='nvim'
+alias za='zathura'
 # bun completions
 [ -s "/home/prateek/.bun/_bun" ] && source "/home/prateek/.bun/_bun"
 

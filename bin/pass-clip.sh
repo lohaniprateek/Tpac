@@ -1,29 +1,33 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 CLIP_TIME=20
-
 PASS_BIN=/usr/bin/pass
-ROFI_BIN=/usr/bin/rofi
-WLCOPY_BIN=/usr/bin/wl-copy
-SWAYNC_BIN=/usr/bin/swaync-client
+DMENU_BIN=/usr/bin/dmenu
+XCLIP_BIN=/usr/bin/xclip
 
-ENTRY=$("$PASS_BIN" ls --flat | "$ROFI_BIN" -dmenu -p "Password:")
-[ -z "$ENTRY" ] && exit 0
+if command -v dunstify >/dev/null 2>&1; then
+  NOTIFY_BIN="$(command -v dunstify)"
+elif command -v notify-send >/dev/null 2>&1; then
+  NOTIFY_BIN="$(command -v notify-send)"
+else
+  NOTIFY_BIN=""
+fi
 
-# Copy password (first line only)
-"$PASS_BIN" show "$ENTRY" | head -n 1 | "$WLCOPY_BIN"
+ENTRY="$("$PASS_BIN" ls --flat | "$DMENU_BIN" -i -p "Password:")"
+[[ -z "$ENTRY" ]] && exit 0
 
-# Notify copied
-"$SWAYNC_BIN" -n \
-  -t "Password Copied" \
-  -b "Password for <b>$ENTRY</b> copied.
-Clears in $CLIP_TIME seconds."
+# Copy password (first line only) to X11 clipboard.
+"$PASS_BIN" show "$ENTRY" | head -n 1 | "$XCLIP_BIN" -selection clipboard
 
-# Wait and clear clipboard
+if [[ -n "$NOTIFY_BIN" ]]; then
+  "$NOTIFY_BIN" "Password Copied" "Password for $ENTRY copied. Clears in $CLIP_TIME seconds."
+fi
+
 sleep "$CLIP_TIME"
-"$WLCOPY_BIN" --clear
+printf '' | "$XCLIP_BIN" -selection clipboard
 
-# Notify cleared
-"$SWAYNC_BIN" -n \
-  -t "Clipboard Cleared" \
-  -b "Password for <b>$ENTRY</b> cleared."
+if [[ -n "$NOTIFY_BIN" ]]; then
+  "$NOTIFY_BIN" "Clipboard Cleared" "Password for $ENTRY cleared."
+fi
