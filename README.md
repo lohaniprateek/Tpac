@@ -3,13 +3,14 @@
 The best arch linux rice for productivity, based on **dwm** (X11)
 
 ## Features
+
 - **suckless** config (better performance)
 
 ## Current stack
 
-- Window manager: `dwm` (custom `config.h`, gaps + systray/status patches)
+- Window manager: [`dwm`] (custom `config.h`, gaps + systray/status patches)
 - Terminal: [`st`](https://github.com/Shourai/st.git)
-- Launcher: `dmenu`
+- Launcher: [`dmenu`]
 - Notifications: [`dunst`](dunst/)
 - Editor: [`neovim`](nvim/)
 - Browser: [`qutebrowser`](qutebrowser/)
@@ -18,20 +19,6 @@ The best arch linux rice for productivity, based on **dwm** (X11)
 - File manager: [`yazi`](yazi/)
 - PDF reader: [`zathura`](zathura/)
 - Wallpaper: [`feh`](scrpits/fehbg.sh)
-
-## Repository layout
-
-- `dwm/` - patched source + config
-- `st/` - terminal source + config
-- `dmenu/` - launcher source + config
-- `dunst/` - dunst config
-- `nvim/` - full Neovim config
-- `qutebrowser/` - browser config/theme/settings
-- `tmux/` - tmux theme/statusline snippets
-- `yazi/` - yazi config
-- `zathura/` - zathura config
-- `scripts/` - helper scripts
-- `pacman/` - package lists
 
 ## Installation Instructions
 
@@ -71,6 +58,20 @@ exec dwm
 ```
 
 enjoy the config!!
+
+## Repository layout
+
+- `dwm/` - patched source + config
+- `st/` - terminal source + config
+- `dmenu/` - launcher source + config
+- `dunst/` - dunst config
+- `nvim/` - full Neovim config
+- `qutebrowser/` - browser config/theme/settings
+- `tmux/` - tmux theme/statusline snippets
+- `yazi/` - yazi config
+- `zathura/` - zathura config
+- `scripts/` - helper scripts
+- `pacman/` - package lists
 
 ## DWM keybinds (from current config)
 
