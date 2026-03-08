@@ -1,29 +1,30 @@
 # Tpac
 
-Personal Arch Linux setup built around **dwm** (X11), with custom configs for terminal, editor, browser, notifications, and CLI workflow.
+The best arch linux rice for productivity, based on **dwm** (X11)
 
-This repo is now a DWM-first setup, not Hyprland.
+## Features
+- **suckless** config (better performance)
 
 ## Current stack
 
 - Window manager: `dwm` (custom `config.h`, gaps + systray/status patches)
-- Terminal: `st`
+- Terminal: [`st`](https://github.com/Shourai/st.git)
 - Launcher: `dmenu`
-- Notifications: `dunst`
-- Editor: `neovim` (lazy.nvim setup in `nvim/`)
-- Browser: `qutebrowser`
-- Shell: `zsh`
-- Multiplexer: `tmux`
-- File manager: `yazi`
-- PDF reader: `zathura`
-- Wallpaper: `feh` (`scripts/fehbg.sh`)
+- Notifications: [`dunst`](dunst/)
+- Editor: [`neovim`](nvim/)
+- Browser: [`qutebrowser`](qutebrowser/)
+- Shell: [`zsh`](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+- Multiplexer: [`tmux`](tmux/)
+- File manager: [`yazi`](yazi/)
+- PDF reader: [`zathura`](zathura/)
+- Wallpaper: [`feh`](scrpits/fehbg.sh)
 
 ## Repository layout
 
 - `dwm/` - patched source + config
 - `st/` - terminal source + config
 - `dmenu/` - launcher source + config
-- `dunst/` - `dunstrc`
+- `dunst/` - dunst config
 - `nvim/` - full Neovim config
 - `qutebrowser/` - browser config/theme/settings
 - `tmux/` - tmux theme/statusline snippets
@@ -32,23 +33,30 @@ This repo is now a DWM-first setup, not Hyprland.
 - `scripts/` - helper scripts
 - `pacman/` - package lists
 
-## Install
+## Installation Instructions
 
-1. Install packages:
+1. Clone the repo:
 
 ```bash
+git clone https://github.com/lohaniprateek/Tpac.git
+```
+
+3. Install packages:
+
+```bash
+cd Tpac
 cd pacman
 sudo pacman -S --needed - < packages.txt
 yay -S --needed - < aur-packages.txt
 ```
 
-2. Clone/update and link configs:
+3. Clone/update and link configs:
 
 ```bash
 ./setup.sh
 ```
 
-3. Build/install suckless tools from `~/suckless`:
+4. Build/install suckless tools from `~/suckless`:
 
 ```bash
 cd ~/suckless/dwm && sudo make clean install
@@ -56,11 +64,13 @@ cd ~/suckless/st && sudo make clean install
 cd ~/suckless/dmenu && sudo make clean install
 ```
 
-4. Start DWM (`~/.xinitrc`):
+5. Start DWM (`~/.xinitrc`):
 
 ```bash
 exec dwm
 ```
+
+enjoy the config!!
 
 ## DWM keybinds (from current config)
 
@@ -78,5 +88,6 @@ exec dwm
 
 ## Notes
 
-- This is a personal setup and is expected to evolve frequently.
+- This is a personal setup and is expected to improve frequently.
 - Some older scripts may still reflect earlier Wayland/Hyprland experiments.
+- Feel free to tell any improvements or raise issues if you find some.
