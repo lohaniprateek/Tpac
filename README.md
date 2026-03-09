@@ -1,5 +1,7 @@
 # Tpac
 
+![tpac logo](assets/tpac-logo.png)
+
 ──────────────────────────────</br>
 っ♨  The best arch linux rice for productivity, based on **dwm** (X11)</br>
 ──────────────────────────────
