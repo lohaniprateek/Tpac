@@ -1,13 +1,13 @@
 # Tpac
 
-─────────────────────────────────────────────────────────────────────────────── 
-  っ♨ The best arch linux rice for productivity, based on **dwm** (X11) っ♨
-─────────────────────────────────────────────────────────────────────────────── 
+──────────────────────────────</br>
+っ♨  The best arch linux rice for productivity, based on **dwm** (X11)</br>
+──────────────────────────────
 
 ## Features
 
 - **suckless** config (better performance)
-- **keyboard** based config
+- **keyboard** based
 - **bragging rights** (arch + suckless btw)
 
 ## Current stack
