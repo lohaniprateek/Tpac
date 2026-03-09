@@ -1,16 +1,20 @@
 # Tpac
 
-The best arch linux rice for productivity, based on **dwm** (X11)
+─────────────────────────────────────────────────────────────────────────────── 
+  っ♨ The best arch linux rice for productivity, based on **dwm** (X11) っ♨
+─────────────────────────────────────────────────────────────────────────────── 
 
 ## Features
 
 - **suckless** config (better performance)
+- **keyboard** based config
+- **bragging rights** (arch + suckless btw)
 
 ## Current stack
 
-- Window manager: [`dwm`] (custom `config.h`, gaps + systray/status patches)
-- Terminal: [`st`](https://github.com/Shourai/st.git)
-- Launcher: [`dmenu`]
+- Window manager: [`dwm`](https://github.com/lohaniprateek/dwm) (custom `config.h`, gaps + systray/status patches)
+- Terminal: [`st`](https://github.com/lohaniprateek/st)
+- Launcher: [`dmenu`](https://github.com/lohaniprateek/dmenu)
 - Notifications: [`dunst`](dunst/)
 - Editor: [`neovim`](nvim/)
 - Browser: [`qutebrowser`](qutebrowser/)
