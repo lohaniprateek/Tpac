@@ -103,6 +103,8 @@ return {
         map("n", "<leader>li", "<cmd>LspInfo<cr>", "LSP: Info")
 
         if client.supports_method("textDocument/inlayHint") then
+          vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+
           map("n", "<leader>uh", function()
             local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
             vim.lsp.inlay_hint.enable(not enabled, { bufnr = bufnr })

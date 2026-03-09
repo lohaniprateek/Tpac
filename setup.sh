@@ -8,7 +8,9 @@ USER_SYSTEMD_DIR="$CONFIG_DIR/systemd/user"
 LOCAL_BIN_DIR="$HOME/.local/bin"
 SUCKLESS_DIR="$HOME/suckless"
 
-mkdir -p "$CONFIG_DIR" "$USER_SYSTEMD_DIR" "$LOCAL_BIN_DIR" "$SUCKLESS_DIR"
+TMUX_CONFIG_DIR="$CONFIG_DIR/tmux"
+
+mkdir -p "$CONFIG_DIR" "$USER_SYSTEMD_DIR" "$LOCAL_BIN_DIR" "$SUCKLESS_DIR" "$TMUX_CONFIG_DIR"
 
 link_item() {
   local src="$1"
@@ -61,6 +63,7 @@ link_item "$REPO_DIR/yazi" "$CONFIG_DIR/yazi"
 link_item "$REPO_DIR/zathura" "$CONFIG_DIR/zathura"
 link_item "$REPO_DIR/.zshrc" "$HOME/.zshrc"
 link_item "$REPO_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
+link_item "$REPO_DIR/tmux/gruvbox.conf" "$TMUX_CONFIG_DIR/gruvbox.conf"
 link_item "$REPO_DIR/mimeapps.list" "$CONFIG_DIR/mimeapps.list"
 link_item "$REPO_DIR/systemds/time-wallpaper.service" "$USER_SYSTEMD_DIR/time-wallpaper.service"
 link_item "$REPO_DIR/systemds/time-wallpaper.timer" "$USER_SYSTEMD_DIR/time-wallpaper.timer"
