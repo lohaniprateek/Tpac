@@ -7,6 +7,12 @@ config.source("theme.py")
 # Load settings
 config.source("settings.py")
 
+# Force media-capture permissions for Google Meet login/call flows.
+config.set("content.media.audio_capture", True, "https://meet.google.com")
+config.set("content.media.audio_video_capture", True, "https://meet.google.com")
+config.set("content.media.audio_capture", True, "https://accounts.google.com")
+config.set("content.media.audio_video_capture", True, "https://accounts.google.com")
+
 # Other searchable sites
 config.set(
     "url.searchengines",

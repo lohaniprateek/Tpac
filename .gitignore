@@ -7,3 +7,15 @@ foo.*
 *.log
 data
 *.db*
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+
+# Editor temp files
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store

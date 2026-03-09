@@ -6,6 +6,15 @@ return {
           diagnostics = { globals = { "vim" } },
           completion = { callSnippet = "Replace" },
           workspace = { checkThirdParty = false },
+          hint = {
+            enable = true,
+            arrayIndex = "Enable",
+            await = true,
+            paramName = "All",
+            paramType = true,
+            semicolon = "Disable",
+            setType = true,
+          },
         },
       },
     },
@@ -17,12 +26,36 @@ return {
           gofumpt = true,
           staticcheck = true,
           usePlaceholders = true,
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
         },
       },
     },
-    pyright = {},
+    pyright = {
+      settings = {
+        python = {
+          analysis = {
+            inlayHints = {
+              variableTypes = true,
+              functionReturnTypes = true,
+              callArgumentNames = true,
+              pytestParameters = true,
+            },
+          },
+        },
+      },
+    },
     bashls = {},
-    clangd = {},
+    clangd = {
+      cmd = { "clangd", "--inlay-hints" },
+    },
   },
   lsp_ensure_installed = { "lua_ls", "gopls", "pyright", "bashls", "clangd" },
   tool_ensure_installed = {
