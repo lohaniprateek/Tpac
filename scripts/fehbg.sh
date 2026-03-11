@@ -1,2 +1,2 @@
 #!/bin/bash
-feh --no-feh --bg-fill '/home/prateek/Tpac/wallpapers/ArchlinuxWallpaper.jpg'
+feh --no-feh --bg-fill "$HOME/Tpac/wallpapers/ArchlinuxWallpaper.jpg"
