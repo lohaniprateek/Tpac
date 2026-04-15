@@ -18,6 +18,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias doc='docker'
+alias dc="docker compose"
 alias tf='terraform'
 alias clr='clear'
 alias v='nvim'

@@ -7,7 +7,7 @@ return {
 			-- If you want overload with custom keymaps don't set enable_default_keymaps at false.
 			keymaps = {
 				timer_custom = "<leader>tbc", -- Custom timer
-				pomodoro_start = "<leader>pbs", -- Start Pomodoro
+				pomodoro_start = "<leader>tbs", -- Start Pomodoro
 				stop_timer = "<leader>tbe", -- Stop timer
 				pause_timer = "<leader>tbp", -- Pause/Resume
 				next_timer = "<leader>tbn", -- Next cycle

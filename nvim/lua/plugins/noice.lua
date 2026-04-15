@@ -46,6 +46,9 @@ return {
             row = "40%",
             col = "50%",
           },
+          win_options = {
+            winblend = 0,
+          },
         },
         mini = {
           -- timeout = 5000, -- timeout in milliseconds

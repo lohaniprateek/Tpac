@@ -15,4 +15,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export TERM="xterm-256color"
 
-startx
+if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" && "$(tty)" == "/dev/tty1" ]]; then
+  exec startx
+fi

@@ -50,8 +50,21 @@ return {
         end,
       },
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          winhighlight = table.concat({
+            "Normal:CmpPmenu",
+            "FloatBorder:CmpPmenuBorder",
+            "CursorLine:CmpPmenuSel",
+            "Search:None",
+          }, ","),
+        }),
+        documentation = cmp.config.window.bordered({
+          winhighlight = table.concat({
+            "Normal:CmpDoc",
+            "FloatBorder:CmpDocBorder",
+            "Search:None",
+          }, ","),
+        }),
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
