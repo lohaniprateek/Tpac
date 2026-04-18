@@ -1,25 +1,24 @@
 [Default Applications]
-text/html=qute-browser.desktop
-x-scheme-handler/http=qute-browser.desktop
-x-scheme-handler/https=qute-browser.desktop
-x-scheme-handler/about=qute-browser.desktop
-x-scheme-handler/unknown=qute-browser.desktop
+
+# browser (your choice)
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
+
+# files
 inode/directory=yazi.desktop
-application/x-wayland-gnome-saved-search=yazij.desktop
-application/octet-stream=nvim.desktop
+
+# media
 video/mp4=mpv.desktop
-application/x-zerosize=nvim.desktop
-audio/vnd.wave=qute-browser.desktop
 image/jpeg=feh.desktop
 image/png=feh.desktop
 image/gif=feh.desktop
+
+# documents
+application/pdf=org.pwmt.zathura.desktop
+
+# archives
 application/zip=yazi.desktop
-x-scheme-handler/mailto=qute-browser.desktop
-application/pdf=org.pwmt.zathura.desktop;
-application/octet-stream=nvim.desktop;
-video/mp4=mpv.desktop;
-application/x-zerosize=nvim.desktop;
-audio/vnd.wave=qute-browser.desktop;
-application/zip=yazi.desktop;
-x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
-x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+
+# misc
+x-scheme-handler/mailto=qutebrowser.desktop
+x-scheme-handler/slack=slack.desktop
