@@ -6,7 +6,7 @@ The goal here is not to over-engineer things. This config leans toward security,
 
 Looking ahead, there may be a shift toward more minimal Wayland approaches like dwl, but Hyprland remains the current base for experimentation and iteration.
 
-Some features and ideas are inspired or implemented with contributions from Maddy @osgilliath, bringing in practical enhancements without unnecessary complexity.
+Some features and ideas are inspired or implemented with contributions from Maddy [@osgilliath](https://github.com/osgilliath), bringing in practical enhancements without unnecessary complexity.
 
 The guiding principle is straightforward:
 
