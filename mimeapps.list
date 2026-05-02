@@ -1,24 +1,15 @@
 [Default Applications]
-
-# browser (your choice)
 x-scheme-handler/http=qutebrowser.desktop
 x-scheme-handler/https=qutebrowser.desktop
-
-# files
-inode/directory=yazi.desktop
-
-# media
+inode/directory=thunar.desktop
 video/mp4=mpv.desktop
 image/jpeg=feh.desktop
 image/png=feh.desktop
 image/gif=feh.desktop
-
-# documents
 application/pdf=org.pwmt.zathura.desktop
-
-# archives
 application/zip=yazi.desktop
-
-# misc
 x-scheme-handler/mailto=qutebrowser.desktop
 x-scheme-handler/slack=slack.desktop
+
+[Added Associations]
+inode/directory=thunar.desktop;code.desktop;
