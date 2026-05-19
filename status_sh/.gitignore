@@ -9,7 +9,6 @@ data
 *.db*
 urls
 QtProject.conf
-quickmarks
 # Python bytecode / caches
 __pycache__/
 *.py[cod]
