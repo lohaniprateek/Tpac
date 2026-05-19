@@ -10,6 +10,8 @@ vim.pack.add({
   'https://github.com/lewis6991/gitsigns.nvim',
   'https://github.com/folke/which-key.nvim',
   'https://github.com/nvim-tree/nvim-tree.lua',
+  'https://github.com/nvim-tree/nvim-web-devicons', -- if you prefer nvim-web-devicons
+  'https://github.com/MeanderingProgrammer/render-markdown.nvim',
   {
     src = 'https://github.com/obsidian-nvim/obsidian.nvim',
     version = vim.version.range "*",
