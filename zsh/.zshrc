@@ -9,8 +9,6 @@ plugins=(
   vi-mode
 )
 
-source $ZSH/oh-my-zsh.sh
-
 eval "$(zoxide init zsh)"
 alias ls='lsd'
 alias l='ls -l'
