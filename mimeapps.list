@@ -31,3 +31,7 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
+image/jpeg=feh.desktop;firefox.desktop;
+image/png=org.flameshot.Flameshot.desktop;
+text/csv=org.neovim.nvim.desktop;
+text/markdown=org.neovim.nvim.desktop;

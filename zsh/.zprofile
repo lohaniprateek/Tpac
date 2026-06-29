@@ -1,7 +1,9 @@
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$(go env GOPATH)/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin"
-
+typeset -U path
+path=("$HOME/.local/bin" "$HOME/.rd/bin" "/usr/local/go/bin" $path)
+if command -v go >/dev/null 2>&1; then
+  path=("$(go env GOPATH)/bin" $path)
+fi
+export PATH
 export LANG="en_US.UTF-8"
 
 if [[ -n $SSH_CONNECTION ]]; then
@@ -11,10 +13,13 @@ else
 fi
 
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-export TERM="xterm-256color"
+path=("$BUN_INSTALL/bin" $path)
+export PATH
 
 if [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" && "$(tty)" == "/dev/tty1" ]]; then
   exec startx
 fi
+
+# Added by Antigravity CLI installer
+path=("$HOME/.local/bin" $path)
+export PATH
