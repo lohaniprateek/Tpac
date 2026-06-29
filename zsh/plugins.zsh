@@ -1,4 +1,4 @@
-ZPLUGINDIR="$HOME/Tpac/zsh/plugins"
+ZPLUGINDIR="${ZDOTDIR:-$HOME/Tpac/zsh}/plugins"
 
 _zplugin_load() {
   local plugin_path="${ZPLUGINDIR}/${2}"
@@ -8,7 +8,8 @@ _zplugin_load() {
     git clone --depth=1 "https://github.com/${1}/${2}" "$plugin_path" \
       || { echo "ERROR: failed to install ${2}" >&2; return 1; }
   fi
-  source "${plugin_path}/${2}.plugin.zsh"
+  local plugin_file="${plugin_path}/${2}.plugin.zsh"
+  [[ -f "$plugin_file" ]] && source "$plugin_file"
 }
 
 zplugin-update() {
