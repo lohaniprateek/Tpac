@@ -1,6 +1,6 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
-require("gamebred.core.options")
-require("gamebred.core.keymaps")
-require("gamebred.plugins.init")
+require("config.lazy")
+require("config.keymaps")
+require("config.options")
+require("config.autocmds")
+require("config.terminal")
+require("config.commands")
